@@ -1,0 +1,101 @@
+.signup-form input {
+    margin-bottom: 11px;
+    font-size: 15px;
+    margin: 10px;
+}
+
+.linktopage {
+    color: rgba(233, 217, 200);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+
+.signup-form {
+    border: 2px solid black;
+    position: absolute;
+    margin: 0;
+    left: 38.5%;
+    margin-top: 5%;
+    margin-right: 50%;
+    display: block;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.459);
+    border-radius: 10px;
+    padding: 40px 25px;
+}
+
+.signup-form h2 {
+    color: aquamarine;
+}
+
+.input-user {
+    position: relative;
+    border-bottom: 1px solid aquamarine;
+    margin: 20px;
+}
+
+.input-user label {
+    position: absolute;
+    top: 70%;
+    left: 7px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    pointer-events: none;
+    color: aquamarine;
+    transition: .3s;
+}
+
+.input-user input {
+    width: 365;
+    height: 30px;
+    transform: translateY(35%);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: aliceblue;
+}
+
+.input-user input:focus~label,
+.input-user input:valid~label {
+    top: -1px;
+}
+
+.agree-terms label {
+    color: aquamarine;
+}
+
+.stay-loged label input {
+    accent-color: rgb(52, 107, 89);
+}
+
+button {
+    width: 300px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: large;
+    background-color: aquamarine;
+    box-shadow: 2px 2px 16px rgb(81, 161, 135);
+}
+
+.signup p {
+    color: rgb(0, 0, 0)
+}
+
+.signup p a {
+    font-size: 14px;
+}
+
+.signup:hover p a {
+    text-decoration: underline;
+}
+
+button:hover {
+    background-color: rgb(45, 92, 76);
+}

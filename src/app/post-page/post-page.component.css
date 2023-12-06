@@ -1,0 +1,42 @@
+.cards {
+    max-width: 30%;
+    margin-left: 35%;
+}
+
+button:hover {
+    background-color: rgb(45, 92, 76);
+}
+
+.profile-window {
+    margin-left: 90%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.459);
+    border-radius: 10px;
+    border: 2px solid black;
+    color: white;
+}
+
+.profile-link {
+    width: 70%;
+    height: 30%;
+    margin-top: 5%;
+}
+
+.profile-link:disabled {
+    color: darkgray;
+    background-color: gray;
+    box-shadow: none;
+}
+
+button {
+    width: 60%;
+    height: 40px;
+    position: inherit;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: large;
+    background-color: aquamarine;
+    box-shadow: 2px 2px 16px rgb(81, 161, 135);
+}

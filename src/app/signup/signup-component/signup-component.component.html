@@ -1,0 +1,150 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="signup.css">
+    <title>Sign Up - Fiction Battles</title>
+</head>
+
+<body class="background">
+    <header>
+        <h1> FICTION BATTLES </h1>
+    </header>
+
+
+    <div data-component="sidebar">
+        <div class="sidebar">
+            <ul class="first-menu">
+                <li class="list-group-item">
+                    <a routerLink="/home"><i aria-hidden="true"><span class="menu-link">Home</span></i></a>
+                </li>
+
+                <li class="list-group-item">
+                    <span class="menu-link" disabled>Community</span>
+                    <ul class="list-group submenu">
+                        <li class="list-group-item ">
+                            <a routerLink="/character" class="menu-link">Create a list</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a routerLink="/post-page" class="menu-link">View All Lists</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-group-item ">
+                    <a routerLink="/about"><i aria-hidden="true"><span class="menu-link">About</span></i></a>
+                </li>
+            </ul>
+            <!-- /.first-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </div>
+    <div *ngIf="badwordMessage" class="foul-language-error">{{badwordMessage}}</div>
+    <div class="signup-form">
+        <h2> Sign Up</h2>
+        <form class="signupForm" (submit)="onSignUp(signupForm)" #signupForm="ngForm">
+            <div class="input-user">
+                <input type="text" name="username" ngModel required #username="ngModel">
+                <label for="">Username</label>
+            </div>
+            <div class="input-user">
+                <input type="text" name="email" ngModel required #email="ngModel">
+                <label for="">Email</label>
+            </div>
+            <div class="input-user">
+                <input id="make-password" [type]="changeType? 'password' : 'text'" name="password" ngModel required #password="ngModel">
+                <label for="">Password</label>
+            </div>
+            <div class="input-user">
+                <input id="confirm-password" [type]="changeType? 'password' : 'text'" name="password" ngModel required #password="ngModel">
+                <label for="password">Retype Password</label>
+            </div>
+            <div class="agree-terms">
+                <label for=""><input type="checkbox" (click)="viewPass()">Show Password</label>
+            </div>
+            <div class="agree-terms">
+                <label for=""><input type ="checkbox">I agree to terms & conditions</label>
+            </div>
+            <button type="submit">Sign Up</button>
+            <div class="signup">
+                <p> Already have an account? <a class="linktopage" routerLink="/login">Login</a></p>
+            </div>
+        </form>
+        <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+        </div>
+        <div *ngIf="passwordMatchError" class="error-message">
+            {{ passwordMatchError }}
+        </div>
+    </div>
+    <!-- <div class="signup-form">
+        <h2> Sign Up</h2>
+        <form action="/login" method="post" (ngSubmit)="signupForm.status !== 'INVALID' && registerFn()"(submit)="onSignUp(signupForm)" #signupForm = "ngForm">
+
+            <div class="input-user">
+                <input type="text" name ="username"  class="form-control" id="username" [ngClass]="{error : getControl('username')?.errors && getControl('username')?.touched}" ngModel required #username = "ngModel">
+                <label for="">Username</label>
+
+            </div>
+            <div class="input-user">
+                <input type="email" name="email" class="form-control" id="email" [ngClass]="{error : getControl('email')?.errors && getControl('email')?.touched}" ngModel required #email = "ngModel">
+                <label for="">Email</label>
+            </div>
+
+            <div class="input-user">
+                <input [type]="changeType? 'password' : 'text'" class="form-control" id="password" formControlName="password" [ngClass]="{error : getControl('password')?.errors && getControl('password')?.touched}">
+                <label for="">Password</label>
+            </div>
+
+            <div class="input-user">
+                <input [type]="changeType? 'password' : 'text'" class="form-control" id="confirm_password" formControlName="confirm_password" [ngClass]="{error : getControl('confirm_password')?.errors && getControl('confirm_password')?.touched}">
+                <label for="password">Retype Password</label>
+            </div>
+            <div class="agree-terms">
+                <label for=""><input type="checkbox" (click)="viewPass()">Show Password</label>
+            </div>
+
+            <div class="agree-terms">
+                <label for=""><input type ="checkbox">I agree to the <button class="terms" (click)="tosPopup()">Terms and Conditions</button></label>
+            </div>
+            <button type="submit" [disabled]="signupForm.status === 'INVALID'">Sign Up</button>
+
+            <div class="signup">
+                <p> Already have an account? <a class="linktopage" routerLink="/login">Login</a></p>
+            </div>
+            <div *ngIf="getControl('username')?.errors && getControl('username')?.touched">
+                <small class="text-danger" *ngIf="getControl('username')?.errors?.['required']">Username field is required</small>
+                <small class="text-danger" *ngIf="getControl('username')?.errors?.['minlength'] || getControl('username')?.errors?.['maxlength']">Username must be 4 to 32 characters</small>
+            </div>
+
+            <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
+                <small class="text-danger" *ngIf="getControl('email')?.errors?.['required']">Email field is required</small>
+                <small class="text-danger" *ngIf="getControl('email')?.errors?.['maxlength']">Email can only be up to 32 characters</small>
+                <small class="text-danger" *ngIf="getControl('email')?.errors?.['pattern']">Please enter a valid email</small>
+            </div>
+            
+            <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
+                <small class="text-danger" *ngIf="getControl('password')?.errors?.['required']">Password field is required</small>
+                <small class="text-danger" *ngIf="getControl('password')?.errors?.['minlength'] || getControl('password')?.errors?.['maxlength']">Password must be 8 to 32 characters</small>
+            </div>
+
+            <div *ngIf="signupForm.errors?.['passwordMismatcgError'] && getControl('confirm_password')?.touched">
+                <small class="text-danger">Passwords do not match</small>
+            </div>
+            
+            <div class="agree-terms">
+                <label for=""><input type="checkbox" (click)="viewPass()">Show Password</label>
+            </div>
+            
+            <div class="agree-terms">
+                <label for=""><input type ="checkbox">I agree to the <button class="terms" (click)="tosPopup()">Terms and Conditions</button></label>
+            </div>
+            
+            <button type="submit"  (click)="loggedIn()" [disabled]="signupForm.status === 'INVALID'">Sign Up</button>
+           
+            <div class="signup">
+                <p> Already have an account? <a class="linktopage" routerLink="/login">Login</a></p>
+                
+            </div>
+        </form>
+    </div> -->
+    <!-- End Signup form -->
+</body>

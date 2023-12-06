@@ -1,0 +1,215 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="character.component.css">
+</head>
+
+<body class="background">
+    <header>
+        <h1> FICTION BATTLES</h1>
+    </header>
+    <div class="profile-window">
+        <p *ngIf="!userLoggedIn">No user is currently logged in</p>
+        <p *ngIf="userLoggedIn">{{subscribedName}} is logged in</p>
+        <button *ngIf="!userLoggedIn" class="profile-link" routerLink="/signup">Sign Up</button>
+        <button *ngIf="!userLoggedIn" class="profile-link" routerLink="/login">Log In</button>
+        <button *ngIf="userLoggedIn" class="profile-link" routerLink="/character">Profile</button>
+        <button *ngIf="userLoggedIn" class="profile-link" (click)="loggedOut()">Log Out</button>
+    </div>
+    <div data-component="sidebar">
+        <div class="sidebar">
+            <ul class="first-menu">
+                <li class="list-group-item">
+                    <a routerLink="/home"><i aria-hidden="true"><span class="menu-link">Home</span></i></a>
+                </li>
+
+                <li class="list-group-item">
+                    <span class="menu-link" disabled>Community</span>
+                    <ul class="list-group submenu">
+                        <li class="list-group-item ">
+                            <a routerLink="/" class="menu-link">Create a list</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a routerLink="/post-page" class="menu-link">View All Lists</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-group-item ">
+                    <a routerLink="/about"><i aria-hidden="true"><span class="menu-link">About</span></i></a>
+                </li>
+            </ul>
+            <!-- /.first-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </div>
+    <div>
+        <p *ngIf="!userLoggedIn" class="not-logged-alert">USER NOT LOGGED IN</p>
+    </div>
+    <div *ngIf="badwordMessage" class="foul-language-error">{{badwordMessage}}</div>
+    <div *ngIf="userLoggedIn" class="listInput">
+        <header>ADD YOUR CHARACATER</header>
+        <form class="listForm" (submit)="onAddCharacter(listForm)" #listForm="ngForm">
+            <mat-form-field class="formSection" id="enterName">
+                <mat-label>Character Name: </mat-label>
+                <input appProfanityFilter matInput name="name" ngModel required #name="ngModel">
+            </mat-form-field>
+
+            <mat-form-field class="formSection" id="enterSource">
+                <mat-label>Character Source: </mat-label>
+                <input appProfanityFilter matInput name="source" ngModel required #source="ngModel">
+            </mat-form-field>
+
+
+            <mat-form-field class="formSection" id="enterPowers">
+                <mat-label>Character Powers(if any): </mat-label>
+                <input appProfanityFilter matInput name="powers" ngModel #powers="ngModel">
+            </mat-form-field>
+            <mat-radio-group class="radio" name="genre" ngModel required #genre="ngModel">
+                <label>Genre: </label>
+                <mat-radio-button class="option" value="Fantasy">Fantasy</mat-radio-button>
+                <mat-radio-button class="option" value="Anime">Anime</mat-radio-button>
+                <mat-radio-button class="option" value="Sci-Fi">Sci-fi</mat-radio-button>
+                <mat-radio-button class="option" value="Video Games">Video Games</mat-radio-button>
+            </mat-radio-group>
+            <div class="rankBox">
+                <mat-form-field>
+                    <mat-label>Rank</mat-label>
+                    <select name="rank" matNativeControl ngModel required #rank="ngModel">
+                  <option value=1>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                </mat-form-field>
+            </div>
+
+
+            <div class="formSubmit" id="formButton">
+                <button type="submit" color="primary" class="formButton">Add Character</button>
+            </div>
+        </form>
+    </div>
+
+    <div *ngIf="userLoggedIn" class="myLists">
+        <header>
+            <h2>Your List</h2>
+        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Origin</th>
+                    <th>Power</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let character of characterList">
+                    <td>{{character.rank}}</td>
+                    <td>{{character.name}}</td>
+                    <td>{{character.source}}</td>
+                    <td>{{character.powers}}</td>
+                    <td>{{character.genre}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- <div class="listInput">
+        <header>ADD YOUR CHARACATER</header>
+        <form class="listForm" (submit)="onAddCharacter(listForm)" #listForm="ngForm">
+            <mat-form-field class="formSection" id="enterName">
+                <mat-label>Character Name: </mat-label>
+                <input matInput name="name" ngModel required #name="ngModel">
+            </mat-form-field>
+
+            <mat-form-field class="formSection" id="enterSource">
+                <mat-label>Character Source: </mat-label>
+                <input matInput name="source" ngModel required #source="ngModel">
+            </mat-form-field>
+
+
+            <mat-form-field class="formSection" id="enterPowers">
+                <mat-label>Character Powers(if any): </mat-label>
+                <input matInput name="powers" ngModel required #powers="ngModel">
+            </mat-form-field>
+            <mat-radio-group class="radio" name="genre" ngModel required #genre="ngModel">
+                <label>Genre: </label>
+                <mat-radio-button class="option" value="Fantasy">Fantasy</mat-radio-button>
+                <mat-radio-button class="option" value="Anime">Anime</mat-radio-button>
+                <mat-radio-button class="option" value="Sci-Fi">Sci-fi</mat-radio-button>
+                <mat-radio-button class="option" value="Video Games">Video Games</mat-radio-button>
+            </mat-radio-group>
+            <div class="rankBox">
+                <mat-form-field>
+                    <mat-label>Rank</mat-label>
+                    <select matNativeControl name="rank" ngModel required #rank="ngModel">
+                  <option value="first">1</option>
+                  <option value="second">2</option>
+                  <option value="third">3</option>
+                  <option value="fourth">4</option>
+                  <option value="fith">5</option>
+                </select>
+                </mat-form-field>
+            </div>
+
+
+            <div class="formSubmit" id="formButton">
+                <button type="submit" color="primary" class="formButton">Add Character</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="myLists">
+        <header>
+            <h2>Your List</h2>
+        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Origin</th>
+                    <th>Power</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let char of ">
+                    <td class="rank"></td>
+                    <td class="name">[name]]</td>
+                    <td class="origin">[source]</td>
+                    <td class="power">Six Eyes/Infinity</td>
+                </tr>
+                <tr>
+                    <td class="rank">2</td>
+                    <td class="name">Hakari</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Idle Death Gambit</td>
+                </tr>
+                <tr>
+                    <td class="rank">3</td>
+                    <td class="name">Yuji</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Left Right Goodnight</td>
+                </tr>
+                <tr>
+                    <td class="rank">4</td>
+                    <td class="name">Toji</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Heavenly Restriction</td>
+                </tr>
+                <tr>
+                    <td class="rank">5</td>
+                    <td class="name">Sukuna</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Cleave/Dismember</td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+</body>

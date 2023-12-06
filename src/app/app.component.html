@@ -1,0 +1,139 @@
+<!-- <app-header-component></app-header-component> -->
+<router-outlet></router-outlet>
+
+<!--<div class="background">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="app.component.css">
+    </head>
+    <header>
+        <h1> FICTION BATTLES</h1>
+    </header>
+    <div data-component="sidebar">
+        <div class="sidebar">
+            <ul class="first-menu">
+                <li class="list-group-item">
+                    <a routerLink="/home"><i aria-hidden="true"><span class="menu-link">Home</span></i></a>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="#"><i aria-hidden="true"><span class="menu-link">Account</span></i></a>
+                    <ul class="list-group submenu">
+                        <li class="list-group-item ">
+                            <a routerLink="/login">Log In</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a routerLink="/signup" class="menu-link">Sign Up</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a routerLink="/" class="menu-link">Create a List</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="list-group-item ">
+                    <a href="about.html"><i aria-hidden="true"><span class="menu-link">About</span></i></a>
+                </li>
+
+
+            </ul>
+           
+    <div class="listInput">
+        <form class="listForm" (submit)="onAddCharacter(listForm)" #listForm="ngForm">
+            <mat-form-field class="formSection" id="enterName">
+                <mat-label>Character Name: </mat-label>
+                <input matInput name="name" ngModel required #name="ngModel">
+            </mat-form-field>
+
+            <mat-form-field class="formSection" id="enterSource">
+                <mat-label>Character Source: </mat-label>
+                <input matInput name="source" ngModel required #source="ngModel">
+            </mat-form-field>
+
+             <mat-form-field class="formSection" id="enterGenre">
+<mat-label>Character Genre: </mat-label>
+<input matInput name = "genre" ngModel required #genre = "ngModel">
+</mat-form-field> 
+            <mat-form-field class="formSection" id="enterPowers">
+                <mat-label>Character Powers(if any): </mat-label>
+                <input matInput name="powers" ngModel required #powers="ngModel">
+            </mat-form-field>
+            <mat-radio-group class="radio" name="genre" ngModel required #genre="ngModel">
+                <label>Genre: </label>
+                <mat-radio-button class="option" value="Fantasy">Fantasy</mat-radio-button>
+                <mat-radio-button class="option" value="Anime">Anime</mat-radio-button>
+                <mat-radio-button class="option" value="Sci-Fi">Sci-fi</mat-radio-button>
+                <mat-radio-button class="option" value="Video Games">Video Games</mat-radio-button>
+            </mat-radio-group>
+            <div class="rankBox">
+                <mat-form-field>
+                    <mat-label>Rank</mat-label>
+                    <select matNativeControl required>
+                  <option value="first">1</option>
+                  <option value="second">2</option>
+                  <option value="third">3</option>
+                  <option value="fourth">4</option>
+                  <option value="fith">5</option>
+                </select>
+                </mat-form-field>
+            </div>
+
+
+            <div class="formSubmit" id="formButton">
+                <button type="submit" color="primary" class="formButton">Add Character</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="myLists">
+        <header>
+            <h2>Your List</h2>
+        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Origin</th>
+                    <th>Power</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rank">1</td>
+                    <td class="name">Gojo</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Six Eyes/Infinity</td>
+                </tr>
+                <tr>
+                    <td class="rank">2</td>
+                    <td class="name">Hakari</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Idle Death Gambit</td>
+                </tr>
+                <tr>
+                    <td class="rank">3</td>
+                    <td class="name">Yuji</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Left Right Goodnight</td>
+                </tr>
+                <tr>
+                    <td class="rank">4</td>
+                    <td class="name">Toji</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Heavenly Restriction</td>
+                </tr>
+                <tr>
+                    <td class="rank">5</td>
+                    <td class="name">Sukuna</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Cleave/Dismember</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>-->

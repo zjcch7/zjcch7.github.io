@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="about.component.css">
+    <link rel="icon" href="/FictionBattles/Frontend/favicon.ico">
+    <title>About - Fiction Battles</title>
+</head>
+
+
+<body class="background">
+    <div>
+        <h1> FICTION BATTLES</h1>
+        <div class="profile-window">
+            <p *ngIf="!userLoggedIn">No user is currently logged in</p>
+            <p *ngIf="userLoggedIn">{{name}} is logged in</p>
+            <button *ngIf="!userLoggedIn" class="profile-link" routerLink="/signup">Sign Up</button>
+            <button *ngIf="!userLoggedIn" class="profile-link" routerLink="/login">Log In</button>
+            <button *ngIf="userLoggedIn" class="profile-link" routerLink="/character">Profile</button>
+            <button *ngIf="userLoggedIn" class="profile-link" (click)="loggedOut()">Log Out</button>
+        </div>
+        <div data-component="sidebar">
+            <div class="sidebar">
+                <ul class="first-menu">
+                    <li class="list-group-item">
+                        <a routerLink="/home"><i aria-hidden="true"><span class="menu-link">Home</span></i></a>
+                    </li>
+
+                    <li class="list-group-item">
+                        <span class="menu-link" disabled>Community</span>
+                        <ul class="list-group submenu">
+                            <li class="list-group-item ">
+                                <a routerLink="/character" class="menu-link">Create a list</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a routerLink="/post-page" class="menu-link">View All Lists</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item ">
+                        <a routerLink="/"><i aria-hidden="true"><span class="menu-link">About</span></i></a>
+                    </li>
+                </ul>
+                <!-- /.first-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </div>
+    </div>
+    <div class="about-field-row">
+        <div class="about-field-info">
+            <h1 class="info-header">Project Information</h1>
+            <p class="info-text">Some text..</p>
+        </div>
+    </div>
+    <div class="about-field-row">
+        <div class="about-field-column">
+            <h2>Zach</h2>
+            <p>Hello, my name is Zachary Covington. I am originally from Missouri. I took part in the HTML/CSS, JAVASCRIPT, and TS for the site. I am excited to see the different characters that sit at the top of everyone's list. I love seeing/hearing what
+                characters people connect the most with. My favorite character is Jiraiya from Naruto.</p>
+        </div>
+        <div class="about-field-column">
+            <h2>Ty</h2>
+            <p>My name is Ty Kalscheur and I was one of the developers for this project. I worked on some of the backend functionality for this website. I am a huge fan of getting lost in fictional worlds. The thing I love the most is getting to know the
+                characters and understanding them and relating to them. My hope is that anyone using this website will be able to share their love for characters and finding other people who share that love.</p>
+        </div>
+        <div class="about-field-column">
+            <h2>Emmanual</h2>
+            <p>Hello, my name is Akpowo Ochepa, and I am currently a senior at the University of Missouri. When it comes to FictionBattle, I am in charge of the user authentication and registration system. Working on this project has been enjoyable, and
+                I can’t wait for everyone else to experience this platform.</p>
+        </div>
+        <div class="about-field-column">
+            <h2>Wyatt</h2>
+            <p>My name is Wyatt French, and I worked on some of the HTML, CSS, and Angular components that are responsible for user input validation and page navigation. I am always excited to discuss fictional characters. I am hopeful this website will
+                provide users with a great community to share their favorite characters as well. </p>
+        </div>
+    </div>
+</body>
+
+</html>

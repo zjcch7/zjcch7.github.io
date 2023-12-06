@@ -1,0 +1,75 @@
+.action-item {
+    margin-left: .5em;
+    cursor: pointer;
+    color: black;
+    margin-top: 2%;
+}
+
+.action-item:hover {
+    color: rgb(34, 34, 34);
+}
+
+.whole {
+    position: relative;
+    margin-top: 20%;
+    margin-left: 2%;
+    background-color: rgb(0, 0, 0);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 2px 2px 18px aquamarine, -2px -2px 6px aquamarine;
+}
+
+.list {
+    padding-bottom: 3ch;
+}
+
+.list p {
+    color: white;
+    padding-top: 2%;
+    text-align: center;
+    overflow: auto;
+}
+
+.header {
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(aquamarine, black);
+    padding-bottom: 2%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.title {
+    margin-left: 30%;
+    margin-bottom: 10%;
+    width: 100%;
+}
+
+.buttons {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-image: linear-gradient(to top, aquamarine, black);
+}
+
+.hideButtonDiv {
+    position: absolute;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.hideButton {
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    margin-left: 60%;
+    margin-top: 5%;
+    color: aquamarine;
+    font-size: 80%;
+    cursor: pointer;
+    position: sticky;
+}
+
+.hideButton:hover {
+    background-color: rgb(49, 49, 49);
+}

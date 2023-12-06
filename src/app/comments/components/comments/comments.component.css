@@ -1,0 +1,56 @@
+.comments {
+    max-height: 10%;
+    background-color: rgba(0, 0, 0, 0.39);
+}
+
+.comments-title {
+    font-size: 200%;
+    color: rgb(217, 252, 240);
+}
+
+.comment-text {
+    background-color: black;
+    box-shadow: 0 0 5px aquamarine;
+    margin: .5%;
+    border-radius: 10px;
+}
+
+.comments-container {
+    margin-top: 5%;
+}
+
+.comments-holder {
+    max-height: 300px;
+    overflow: scroll;
+}
+
+.commentText {
+    margin-left: 5%;
+}
+
+.comments-container p {
+    color: aquamarine;
+    padding-left: 2%;
+}
+
+.comment-form-title {
+    font-size: 100%;
+    margin-top: 5%;
+    margin-left: 5%;
+    color: aquamarine;
+}
+
+.seeComments {
+    border: none;
+    background-color: transparent;
+    border-radius: 10px;
+    margin-top: 5%;
+    color: aquamarine;
+    font-size: 80%;
+    cursor: pointer;
+    position: sticky;
+}
+
+.seeComments:hover {
+    background-color: black;
+}

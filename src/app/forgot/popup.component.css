@@ -1,0 +1,27 @@
+.popupBackground{
+    background-color: white;
+    width: 100%;
+    height: 140px;
+}
+
+h2{
+    width: 500px;
+    text-align: center;
+    padding-top: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.emailName{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #15e6cad0;
+    font-size: 30px;
+}
+
+.dismissPopup{
+    width: 500px;
+    text-align: center;
+    padding-top: 8px;
+    font-size: small;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

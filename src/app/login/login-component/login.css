@@ -1,0 +1,141 @@
+.login-form input {
+    margin-bottom: 5%;
+    font-size: 15px;
+    margin: 2%;
+}
+
+.linktopage {
+    color: rgba(233, 217, 200);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+.login-form {
+    border: 2px solid black;
+    position: relative;
+    margin: 0;
+    left: 34.5%;
+    margin-right: 50%;
+    display: block;
+    width: 25%;
+    max-height: 80%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.459);
+    border-radius: 10px;
+    padding: 5% 3%;
+}
+
+.login-form h2 {
+    color: aquamarine;
+    font-style: serif;
+}
+
+.linktoforgot {
+    color: aquamarine;
+    margin: 10px;
+}
+
+.input-user {
+    position: relative;
+    border-bottom: 1px solid aquamarine;
+    margin-top: 10%;
+}
+
+.input-user label {
+    position: absolute;
+    top: 70%;
+    left: 7px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    pointer-events: none;
+    color: aquamarine;
+    transition: .3s;
+}
+
+.input-user input {
+    position: inherit;
+    width: 60%;
+    height: 10%;
+    transform: translateY(3%);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: rgb(184, 205, 223);
+    margin-top: 8%;
+    left: -10%;
+}
+
+.input-user input:focus~label,
+.input-user input:valid~label {
+    top: -1%;
+}
+
+.stay-loged {
+    margin-top: 5%;
+}
+
+.stay-loged label {
+    color: aquamarine;
+}
+
+.stay-loged label input {
+    accent-color: rgb(52, 107, 89);
+}
+
+button {
+    width: 60%;
+    height: 40px;
+    margin-top: 5%;
+    position: inherit;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: large;
+    background-color: aquamarine;
+    box-shadow: 2px 2px 16px rgb(81, 161, 135);
+}
+
+.signup {
+    margin-top: 5%;
+}
+
+.signup p {
+    color: aquamarine
+}
+
+.signup:hover p a {
+    text-decoration: underline;
+}
+
+button:hover {
+    background-color: rgb(45, 92, 76);
+}
+
+.profile-window {
+    margin-left: 90%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.459);
+    border-radius: 10px;
+    border: 2px solid black;
+    color: white;
+}
+
+.profile-link {
+    width: 70%;
+    height: 30%;
+    margin-top: 5%;
+}
+
+.profile-link:disabled {
+    color: darkgray;
+    background-color: gray;
+    box-shadow: none;
+}
+.text-danger {
+    color: red;
+}
+.text-success {
+    color: greenyellow;
+}

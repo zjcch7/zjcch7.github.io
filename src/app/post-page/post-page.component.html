@@ -1,0 +1,45 @@
+<body class="background">
+    <header>
+        <h1> FICTION BATTLES</h1>
+    </header>
+    <div class="profile-window">
+        <p *ngIf="!userLoggedIn">No user is currently logged in</p>
+        <p *ngIf="userLoggedIn">{{name}} is logged in</p>
+        <button *ngIf="!userLoggedIn" class="profile-link" routerLink="/signup">Sign Up</button>
+        <button *ngIf="!userLoggedIn" class="profile-link" routerLink="/login">Log In</button>
+        <button *ngIf="userLoggedIn" class="profile-link" routerLink="/character">Profile</button>
+        <button *ngIf="userLoggedIn" class="profile-link" (click)="loggedOut()">Log Out</button>
+    </div>
+    <div data-component="sidebar">
+        <div data-component="sidebar">
+            <div class="sidebar">
+                <ul class="first-menu">
+                    <li class="list-group-item">
+                        <a routerLink="/home"><i aria-hidden="true"><span class="menu-link">Home</span></i></a>
+                    </li>
+
+                    <li class="list-group-item">
+                        <span class="menu-link" disabled>Community</span>
+                        <ul class="list-group submenu">
+                            <li class="list-group-item ">
+                                <a routerLink="/character" class="menu-link">Create a list</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a routerLink="/post-page" class="menu-link">View All Lists</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item ">
+                        <a routerLink="/about"><i aria-hidden="true"><span class="menu-link">About</span></i></a>
+                    </li>
+                </ul>
+                <!-- /.first-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </div>
+    </div>
+
+    <div class="cards">
+        <app-lists></app-lists>
+    </div>
+</body>

@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet" href="comments.component.css">
+</head>
+<div class="comments">
+    <div>
+        <h3 class="comments-title">Comments</h3>
+        <div class="comment-form-title">Write comment</div>
+        <comment-form appProfanityFilter submitLabel="Submit" (handleSubmit)="addComment({text: $event, parentId:null,postId,currentUserId})"></comment-form>
+    </div>
+    <button *ngIf="button1" (click)="viewComments()" class="seeComments">View comments</button>
+    <button *ngIf="button2" (click)="noFunc()" class="seeComments"> Hide comments</button>
+    <div *ngIf="div1" class="comments-holder">
+        <div *ngFor="let comment of commentList">
+            <div class="comments-container">
+                <div class="comment-text">
+                    <p>- {{comment.username}}: {{comment.createdAt}}</p>
+                    <p class="commentText">{{comment.body}}</p>
+                </div>
+                <!-- <div (click)="reply()" class="action">Reply</div>
+                <comment-form *ngIf="replyForm" appProfanityFilter submitLabel="Reply" (handleSubmit)="addComment({text: $event, parentId:comment.id,postId,currentUserId})"></comment-form>
+
+                <div (click)="getSortedReplies(comment.id)">See Replies</div>
+                <div *ngIf="replySection">
+                    <div *ngFor="let replies = commentReplies">
+                        <p>- {{replies.username}}: {{replies.createdAt}}</p>
+                        <p class="commentText">{{replies.body}}</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,84 @@
+.forgot-password-container {
+    color: aliceblue;
+    border: 2px solid black;
+    position: absolute;
+    margin: 0;
+    left: 32.5%;
+    margin-top: 5%;
+    margin-right: 50%;
+    display: block;
+    width: 30%;
+    height: 40%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.459);
+    border-radius: 10px;
+    padding: 5% 3%;
+}
+
+.forgot-password-container h2 {
+    color: aquamarine;
+    font-style: serif;
+    margin-top: 2%;
+}
+
+.linktoforgot {
+    color: aquamarine;
+    margin: 10px;
+}
+
+.form-group {
+    position: relative;
+    border-bottom: 1px solid aquamarine;
+    margin-top: 10%;
+}
+
+.form-group label {
+    position: inherit;
+    margin-top: 12%;
+    left: -10%;
+    transform: translateY(-100%);
+    font-size: 20px;
+    pointer-events: none;
+    color: aquamarine;
+}
+
+.form-group input {
+    position: inherit;
+    width: 60%;
+    height: 10%;
+    transform: translateY(3%);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: rgb(184, 205, 223);
+    margin-top: 8%;
+    left: -10%;
+}
+
+.form-group input:focus~label,
+.form-group input:valid~label {
+    top: -5%;
+}
+
+button {
+    width: 50%;
+    height: 40px;
+    position: relative;
+    margin-top: 5%;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    color: black;
+    font-size: large;
+    background-color: aquamarine;
+    box-shadow: 2px 2px 16px rgb(81, 161, 135);
+}
+
+button:hover {
+    background-color: rgb(45, 92, 76);
+}
+
+.text-danger{
+    color: red;
+}

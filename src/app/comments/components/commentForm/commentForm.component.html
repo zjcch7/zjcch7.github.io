@@ -1,0 +1,7 @@
+<link rel="stylesheet" href="commentForm.component.css">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <textarea placeholder="Enter here...(200 character limit)" maxlength="200" class="comment-form-textarea" formControlName="title"></textarea>
+    <button class="comment-form-button" type="submit" [disabled]="form.invalid" *ngIf="userLoggedIn">   
+        {{submitLabel}}
+    </button>
+</form>

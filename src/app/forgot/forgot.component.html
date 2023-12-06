@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - Fiction Battles</title>
+    <link rel="stylesheet" type="text/css" href="forgot.component.css">
+</head>
+
+<body class="background">
+    <div>
+        <header>
+            <h1> FICTION BATTLES</h1>
+        </header>
+        <div>
+            <div data-component="sidebar">
+                <div class="sidebar">
+                    <ul class="first-menu">
+                        <li class="list-group-item">
+                            <a routerLink="/home"><i aria-hidden="true"><span class="menu-link">Home</span></i></a>
+                        </li>
+        
+                        <li class="list-group-item">
+                            <span class="menu-link" disabled>Community</span>
+                            <ul class="list-group submenu">
+                                <li class="list-group-item ">
+                                    <a routerLink="/character" class="menu-link">Create a list</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a routerLink="/post-page" class="menu-link">View All Lists</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item ">
+                            <a routerLink="/about"><i aria-hidden="true"><span class="menu-link">About</span></i></a>
+                        </li>
+                    </ul>
+                    <!-- /.first-menu -->
+                </div>
+                <!-- /.sidebar -->
+            </div>
+        </div>
+    </div>
+    <div class="forgot-password-container">
+        <h2>Forgot Password</h2>
+        <p>Enter your email address and we'll send you a link to reset your password.</p>
+        
+        <form [formGroup]="emailResetForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" formControlName="email" 
+                       [ngClass]="{'error' : getControl('email')?.errors && getControl('email')?.touched}">
+            </div>
+            <!-- Error messages here -->
+            <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
+                <small class="text-danger" *ngIf="getControl('email')?.errors?.['required']">Email field is required </small>
+                <small class="text-danger" *ngIf="getControl('email')?.errors?.['maxlength']">Email can only be up to 32 characters </small>
+                <small class="text-danger" *ngIf="getControl('email')?.errors?.['pattern']">Please enter a valid email </small>
+            </div>
+            <div *ngIf="errorStatus">
+                <small class="text-danger">{{notFoundError}}</small> <!--If user not found-->
+            </div>
+
+            <button type="submit" [disabled]="emailResetForm.invalid">Send Reset Link</button>
+        </form>
+
+    </div>
+</body>
+
+</html>

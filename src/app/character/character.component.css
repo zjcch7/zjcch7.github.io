@@ -1,0 +1,199 @@
+.listInput {
+    margin-left: 28%;
+    margin-top: 3%;
+    background-image: linear-gradient(to bottom right, #15e6ca, #0c1b1be3);
+    border: 3px solid rgba(127, 255, 212, 0.13);
+    text-align: center;
+    max-width: 43%;
+    max-height: fit-content;
+    border-radius: 45px;
+    box-shadow: 0 0 20px rgb(65, 131, 109), 0 0 30px aquamarine;
+}
+
+.listInput header {
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 3rem;
+    color: #0c1b1be3;
+    text-align: center;
+    text-decoration: underline;
+    top: 2.5rem;
+    background-color: transparent;
+}
+
+.myLists {
+    margin-top: 2%;
+    margin-left: 34%;
+    max-width: 30%;
+    max-height: 50%;
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px rgb(13, 27, 23);
+    overflow: auto;
+}
+
+.myLists header {
+    background-image: linear-gradient(to bottom right, #15e6ca, #0c1b1be3);
+    height: 8rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    position: relative;
+}
+
+.myLists header h2 {
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 3rem;
+    color: #0c1b1be3;
+    position: absolute;
+    top: 2.5rem;
+    margin-left: 1rem;
+}
+
+.myLists table {
+    background-color: #0c1b1be3;
+    color: #d6d5d5;
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.myListsthead {
+    font-size: 65%;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.myLists tr:nth-child(2n) {
+    background-color: #1b6868;
+}
+
+.rank,
+.name,
+.origin,
+.power {
+    text-align: right;
+}
+
+.origin {
+    width: 20ch;
+}
+
+.myLists th {
+    padding: 0.5rem 0.5rem;
+    text-align: right;
+}
+
+.myLists td {
+    padding: 0.5rem 0.5rem;
+}
+
+.rankBox {
+    margin-left: 34%;
+    margin-top: 5%;
+    border-radius: 20px;
+    background-color: #1b6868;
+    max-width: 30%;
+    max-height: 100px;
+    border: 2px solid #15e6ca;
+    overflow: auto;
+}
+
+.rankBox mat-form-field {
+    margin-top: 2%;
+}
+
+.formSection {
+    padding: 2%;
+    margin-top: 5%;
+    background-color: #1b6868;
+    max-width: 30%;
+    border-radius: 20px;
+    border: 2px solid aquamarine;
+}
+
+.formSection2 {
+    padding: 30px;
+}
+
+.radio {
+    color: rgb(254, 255, 255);
+    font-size: 180%;
+    padding-left: 2%;
+    text-shadow: 0 0 2px black;
+}
+
+.mat-radio-button {
+    font-size: 100%;
+    margin-left: 20%;
+}
+
+.formSubmit {
+    padding: 2%;
+    max-width: 50%;
+    max-height: 20%;
+    margin-left: 20%;
+    display: block;
+}
+
+.formButton {
+    box-shadow: 2px 2px 16px rgb(17, 34, 28);
+    font-size: 150%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: aquamarine;
+    border-radius: 20px;
+    margin-left: 8%;
+    margin-top: 2%;
+}
+
+.formButton:hover {
+    background-color: rgb(59, 117, 98);
+    box-shadow: 2px 2px 16px rgb(190, 236, 221);
+}
+
+button:hover {
+    background-color: rgb(45, 92, 76);
+}
+
+.profile-window {
+    margin-left: 90%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.459);
+    border-radius: 10px;
+    border: 2px solid black;
+    color: white;
+}
+
+.profile-link {
+    width: 70%;
+    height: 30%;
+    margin-top: 5%;
+}
+
+.profile-link:disabled {
+    color: darkgray;
+    background-color: gray;
+    box-shadow: none;
+}
+
+button {
+    width: 60%;
+    height: 40px;
+    position: inherit;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: large;
+    background-color: aquamarine;
+    box-shadow: 2px 2px 16px rgb(81, 161, 135);
+}
+
+.not-logged-alert {
+    color: red;
+    text-align: center;
+}

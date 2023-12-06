@@ -1,0 +1,119 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <title>Log In - Fiction Battles</title>
+
+</head>
+
+<body class="background">
+    <header>
+        <h1> FICTION BATTLES</h1>
+    </header>
+    <div class="profile-window">
+        <p *ngIf="!userLoggedIn">No user is currently logged in</p>
+        <p *ngIf="userLoggedIn">{{name}} is logged in</p>
+        <button *ngIf="!userLoggedIn" class="profile-link" routerLink="/signup">Sign Up</button>
+        <button *ngIf="!userLoggedIn" class="profile-link" disabled routerLink="/login">Log In</button>
+        <button *ngIf="userLoggedIn" class="profile-link" routerLink="/character">Profile</button>
+        <button *ngIf="userLoggedIn"class="profile-link"  (click)="loggedOut()">Log Out</button>
+    </div>
+    
+    <div data-component="sidebar">
+        <div class="sidebar">
+            <ul class="first-menu">
+                <li class="list-group-item">
+                    <a routerLink="/home"><i aria-hidden="true"><span class="menu-link">Home</span></i></a>
+                </li>
+
+                <li class="list-group-item">
+                    <span class="menu-link" disabled>Community</span>
+                    <ul class="list-group submenu">
+                        <li class="list-group-item ">
+                            <a routerLink="/character" class="menu-link">Create a list</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a routerLink="/post-page" class="menu-link">View All Lists</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-group-item ">
+                    <a routerLink="/about"><i aria-hidden="true"><span class="menu-link">About</span></i></a>
+                </li>
+            </ul>
+            <!-- /.first-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </div>
+
+    <div class="login-form">
+        <h2>Login</h2>
+        <form action="/login" (submit)="onLogin(loginForm)" #loginForm="ngForm">
+            <div class="input-user">
+                <input type="text" name="email" ngModel required #email="ngModel">
+                <label for="">Email</label>
+            </div>
+            <div class="input-user">
+                <input [type]="changeType? 'text' : 'password'" name="password" ngModel required #password="ngModel">
+                <label for="">Password</label>
+            </div>
+            <div class="stay-loged">
+                <label for=""><input type="checkbox" (click)="viewPass()">Show Password</label>
+            </div>
+            
+            <button type="submit"> Login</button>
+        </form>
+
+        <div *ngIf="missingInput">
+            <small class="text-danger">Please enter Username and Password</small> <!--If user leaves an input blank-->
+        </div>
+        <div *ngIf="errorStatus">
+            <small class="text-danger">{{notFoundError}}</small> <!--If user not found-->
+        </div>
+        <div *ngIf="loginSuccess">
+            <small class="text-success">Successfully logged in! Redirecting to home...</small> <!-- On login success-->
+        </div>
+        
+        <div class="signup">
+            <p> Don't have an account? <a class="linktopage" routerLink="/signup">Sign Up</a></p>
+        </div>
+
+
+        <div class="ForgotPassword">
+            <a class="linktopage" routerLink="/forgot">ForgotPassword?</a>
+         </div>
+
+    </div>
+    <!-- <div class="login-form">
+        <h2>Login</h2>
+        <form action="/" [formGroup]="loginForm" (ngSubmit)="loggedIn()">
+            <div class="input-user">
+                <input id="username" [(ngModel)]="username" formControlName="username" type="text" >
+                <label for="">Username</label>
+            </div>
+            <div class="input-user">
+                <input [type]="changeType? 'password' : 'text'" formControlName="password" required>
+                <label for="">Password</label>
+            </div>
+            <div class="stay-loged">
+                <label for=""><input type="checkbox" (click)="viewPass()">Show Password</label>
+            </div>
+            <div class="stay-loged">
+                <label for=""><input type ="checkbox">Remember me</label>
+            </div>
+            <button type="submit" [disabled]="loginForm.status === 'INVALID'" >Login</button>
+        </form>
+        <div class="signup">
+            <p> Forgot password? <a class="linktopage" routerLink="/forgot">Reset Password</a></p>
+        </div>
+        <div class="signup">
+            <p> Don't have an account? <a class="linktopage" routerLink="/signup">Sign Up</a></p>
+        </div>
+    </div> -->
+</body>
+
+</html>

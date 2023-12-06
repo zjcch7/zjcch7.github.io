@@ -1,0 +1,21 @@
+<mat-card class="whole" *ngFor="let user of postList">
+    <mat-card-header class="header">
+        <mat-card-title class="title">{{user.username}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="list" *ngFor="let character of user.characters">
+        <p>{{character.rank}}. {{character.name}} / Source: {{character.source}} / Power(s): {{character.powers}} / Genre: {{character.genre}}</p>
+    </mat-card-content>
+    <mat-card-actions class="buttons">
+        <mat-icon (click)="viewComments(user.username)" class="action-item" color="accent"> chat</mat-icon>
+        <div *ngIf="selectedPostId === user.username" class="hideButtonDiv">
+            <button *ngIf="hideButton" (click)="hideComments()" class="hideButton">Hide Comments</button>
+        </div>
+    </mat-card-actions>
+    <div *ngIf="selectedPostId === user.username">
+        <div *ngIf="commentsCard" class='commentSection'>
+            <comments postId={{user.username}}></comments>
+            <!--passing username to comments-->
+        </div>
+    </div>
+
+</mat-card>

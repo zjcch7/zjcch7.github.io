@@ -1,0 +1,83 @@
+.commentSection {
+    width: 30%;
+    max-height: 50%;
+    margin-top: 5%;
+    margin-left: 34.5%;
+    border: 2px solid black;
+}
+
+.home-profile-info {
+    width: 30%;
+    /* Adjust width as needed */
+    height: auto;
+    /* Auto height to accommodate content */
+    margin: 2% auto;
+    /* Center the box and provide top and bottom margin */
+    padding: 10px;
+    /* Space inside the box */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.459);
+    border-radius: 10px;
+    border: 2px solid black;
+    color: white;
+}
+
+button:hover {
+    background-color: rgb(45, 92, 76);
+}
+
+.profile-window {
+    margin-left: 90%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.459);
+    border-radius: 10px;
+    border: 2px solid black;
+    color: white;
+}
+
+.profile-link {
+    width: 70%;
+    height: 30%;
+    margin-top: 5%;
+    position: inherit;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: large;
+    background-color: aquamarine;
+    box-shadow: 2px 2px 16px rgb(81, 161, 135);
+}
+
+.back-to-result-select {
+    cursor: pointer;
+    color: antiquewhite;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.back-to-result-select:hover {
+    text-decoration: underline;
+    color: rgba(250, 235, 215, 0.507);
+}
+
+.votedFor {
+    font-size: 200%;
+    text-align: center;
+    margin-top: 1%;
+    color: black;
+}
+
+.votingTotals {
+    text-align: center;
+    font-size: 200%;
+    margin-top: 6%;
+    color: aquamarine;
+    text-shadow: 0 0 2px black;
+}
+
+.profile-link:disabled {
+    color: darkgray;
+    background-color: gray;
+    box-shadow: none;
+}

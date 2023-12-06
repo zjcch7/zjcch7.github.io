@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="topBar">
+    <!-- App Title, subject to change, divs are to help with css -->
+  <div class="appTitle">
+    <span>Our Capstone project</span>
+  </div>
+
+  <!-- header.component.html -->
+<div class="header">
+  <!-- Other header content -->
+</div>
+
+  <!-- Nav Buttons, <button> will change to <a> possibly when we implement routing -->
+    <div class="buttons">
+      <a (click)="clickSignUpTitle()" style="text-decoration: none;" routerLink="/" routerLinkActive="active" mat-raised-button color="primary">Sign up</a>
+      <a (click)="clickLoginTitle()" style="text-decoration: none;" routerLink="/login" routerLinkActive="active" mat-raised-button color="primary">Login</a>
+      <a (click)="clickCharacterTitle()" style="text-decoration: none;" routerLink="/character" routerLinkActive="active" mat-raised-button color="primary">Character</a>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="pageTitle">
+    <span>{{title}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>

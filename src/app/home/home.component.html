@@ -1,0 +1,156 @@
+<html>
+
+
+
+<body class="background">
+    <header>
+        <h1> FICTION BATTLES</h1>
+    </header>
+
+    <div class="profile-window">
+        <p *ngIf="!userLoggedIn">No user is currently logged in</p>
+        <p *ngIf="userLoggedIn">{{name}} is logged in</p>
+        <button *ngIf="!userLoggedIn" class="profile-link" routerLink="/signup">Sign Up</button>
+        <button *ngIf="!userLoggedIn" class="profile-link" routerLink="/login">Log In</button>
+        <button *ngIf="userLoggedIn" class="profile-link" routerLink="/character">Profile</button>
+        <button *ngIf="userLoggedIn" class="profile-link" (click)="loggedOut()">Log Out</button>
+    </div>
+
+    <div data-component="sidebar">
+        <div class="sidebar">
+            <ul class="first-menu">
+                <li class="list-group-item">
+                    <a routerLink="/"><i aria-hidden="true"><span class="menu-link">Home</span></i></a>
+                </li>
+
+                <li class="list-group-item">
+                    <span class="menu-link" disabled>Community</span>
+                    <ul class="list-group submenu">
+                        <li class="list-group-item ">
+                            <a routerLink="/character" class="menu-link">Create a list</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a routerLink="/post-page" class="menu-link">View All Lists</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-group-item ">
+                    <a routerLink="/about"><i aria-hidden="true"><span class="menu-link">About</span></i></a>
+                </li>
+            </ul>
+            <!-- /.first-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </div>
+    <div class="votebox" id="vbody">
+        <form class="vbody">
+            <header>
+                <h1 class="headerText">Choose your champion</h1>
+            </header>
+            <button class="vote-box-buttons" *ngIf="voteFor1" (click)="voteTaly1()" [disabled]="!userLoggedIn">{{votingCharacter1.name}}</button>
+            <button class="vote-box-buttons" *ngIf="voteFor2" (click)="voteTaly2()" [disabled]="!userLoggedIn">{{votingCharacter2.name}}</button>
+            <button class="vote-box-buttons" *ngIf="seeResults" (click)="viewResultsFor1()" [disabled]="!userLoggedIn">{{votingCharacter1.name}} total</button>
+            <button class="vote-box-buttons" *ngIf="seeResults" (click)="viewResultsFor2()" [disabled]="!userLoggedIn">{{votingCharacter2.name}} total</button>
+
+
+            <div *ngIf="voteTotals1">
+                <div class="voteTotal1">
+                    <p class="votingTotals" id="voteingText">View {{votingCharacter1.name}} total votes: {{character1Count}}</p>
+                </div>
+            </div>
+            <div *ngIf="voteTotals2">
+                <div class="voteTotal2">
+                    <p class="votingTotals" id="voteingText">View {{votingCharacter2.name}} total votes: {{character2Count}}</p>
+                </div>
+            </div>
+            <div class="back-to-result-select" *ngIf="backResultSelect" (click)="formResultSelect()">Back</div>
+        </form>
+    </div>
+    <div class="post">
+    </div>
+
+    <!-- <div class="leader_board">
+        <header>
+            <h2>Leader Board</h2>
+        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Origin</th>
+                    <th>Power</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rank">1</td>
+                    <td class="name">Gojo</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Six Eyes/Infinity</td>
+                </tr>
+                <tr>
+                    <td class="rank">2</td>
+                    <td class="name">Hakari</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Idle Death Gambit</td>
+                </tr>
+                <tr>
+                    <td class="rank">3</td>
+                    <td class="name">Yuji</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Left Right Goodnight</td>
+                </tr>
+                <tr>
+                    <td class="rank">4</td>
+                    <td class="name">Toji</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Heavenly Restriction</td>
+                </tr>
+                <tr>
+                    <td class="rank">5</td>
+                    <td class="name">Sukuna</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Cleave/Dismember</td>
+                </tr>
+                <tr>
+                    <td class="rank">6</td>
+                    <td class="name">Gojo</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Six Eyes/Infinity</td>
+                </tr>
+                <tr>
+                    <td class="rank">7</td>
+                    <td class="name">Hakari</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Idle Death Gambit</td>
+                </tr>
+                <tr>
+                    <td class="rank">8</td>
+                    <td class="name">Yuji</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Left Right Goodnight</td>
+                </tr>
+                <tr>
+                    <td class="rank">9</td>
+                    <td class="name">Toji</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Heavenly Restriction</td>
+                </tr>
+                <tr>
+                    <td class="rank">10</td>
+                    <td class="name">Sukuna</td>
+                    <td class="origin">Jujutsu Kaisen</td>
+                    <td class="power">Cleave/Dismember</td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+    <div class='commentSection'>
+        <comments postId="1"></comments>
+    </div>
+
+
+</body>
+
+</html>

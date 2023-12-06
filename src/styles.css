@@ -1,0 +1,393 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.background {
+    background-image: linear-gradient(black, #15e6cad0);
+    height: 200%;
+    background-color: aquamarine;
+    overflow: scroll;
+}
+
+.commentSection {
+    overflow: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 16px #0b2525;
+    box-shadow: 2px 2px 8px aquamarine;
+}
+
+header {
+    background-color: rgb(17, 17, 17);
+    position: center;
+    text-align: right;
+}
+
+h1 {
+    color: aquamarine;
+    text-align: center;
+    font-size: 600%;
+    text-shadow: 0 0 2px rgb(0, 0, 0);
+}
+
+h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: #fff;
+}
+
+.foul-language-error {
+    text-align: center;
+    color: red;
+    font-size: 200%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.menu-link {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-size: 15;
+}
+
+.menu-link:hover {
+    text-shadow: 1px 1px 2px darkgray;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.sidebar {
+    position: fixed;
+    z-index: 9999;
+}
+
+.first-menu {
+    position: fixed;
+    background-color: rgb(17 17 17);
+    height: 100vw;
+    width: 100px;
+    top: -20px;
+    margin-left: -12px;
+    overflow: hidden;
+    transition: width .5s;
+    float: right;
+    i {
+        font-size: 24px;
+    }
+    span {
+        font-size: 14px;
+        white-space: nowrap;
+        font-family: 'Open Sans', sans-serif;
+        opacity: 0;
+        visibility: hidden;
+    }
+    &:hover span {
+        opacity: 1;
+        visibility: visible;
+    }
+    .list-group-item {
+        border-radius: 0;
+    }
+}
+
+.first-menu:hover {
+    width: 115px;
+}
+
+
+/* .list-group-item:hover {
+} */
+
+.submenu {
+    position: fixed;
+    left: 138px;
+    width: 195px;
+    top: 0px;
+    background-color: rgb(17 17 17);
+    height: 100vw;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.list-group-item {
+    margin-top: 40px;
+}
+
+.first-menu li:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sub-submenu {
+    position: fixed;
+    background-color: #fff;
+    left: 355px;
+    top: 60px;
+    height: 100vw;
+    width: 195px;
+    opacity: 0;
+    visibility: hidden;
+    a {
+        color: blue;
+    }
+    .list-group-item:hover {
+        background-color: transparent;
+    }
+}
+
+.submenu li:hover .sub-submenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.list-group-item {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.arrow {
+    position: fixed;
+    left: 329px;
+    width: 0;
+    height: 0;
+    border-top: 27px solid transparent;
+    border-bottom: 27px solid transparent;
+    border-right: 27px solid white;
+    &:nth-child(3) {
+        top: 20px;
+    }
+}
+
+.leader_board * {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: 0%;
+}
+
+.leader_board {
+    background-color: #fdfdfd8e;
+    max-width: 22%;
+    max-height: 60%;
+    margin-left: 75%;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    box-shadow: 2px 2px 16px 6px #000000d0, 2px 2px 10px 6px #15e6cad0, 2px 2px 10px 6px #15e6a7e0;
+    overflow: auto;
+}
+
+.leader_board:hover {
+    box-shadow: 2px 2px 16px 6px #15e6ca6c, 2px 2px 16px 6px #15e6a74b;
+}
+
+.leader_board header {
+    background-image: linear-gradient(to bottom right, #15e6ca, #0c1b1be3);
+    height: 8rem;
+    width: 100%;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    position: relative;
+}
+
+.leader_board header h2 {
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 3rem;
+    color: #0c1b1be3;
+    position: absolute;
+    top: 2.5rem;
+    margin-left: 1rem;
+}
+
+.leader_board table {
+    background-color: #0c1b1be3;
+    color: #d6d5d5;
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.leader_board thead {
+    font-size: 65%;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.leader_board tr:nth-child(2n) {
+    background-color: #1b6868;
+}
+
+.rank,
+.name,
+.origin,
+.power {
+    text-align: right;
+}
+
+.origin {
+    width: 20ch;
+}
+
+.leader_board th {
+    padding: 0.5rem 0.5rem;
+    text-align: right;
+}
+
+.leader_board td {
+    padding: 0.5rem 0.5rem;
+}
+
+ ::-webkit-scrollbar {
+    color: transparent;
+    width: 0%;
+}
+
+.votebox {
+    margin-left: 32%;
+    width: 35%;
+    height: 190px;
+    background-color: #103d39d0;
+    border: none;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+.votebox header {
+    background-image: linear-gradient(to bottom, black, #12b09b);
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    height: 50px;
+    margin-top: -1.6%;
+}
+
+.votebox h1 {
+    font-size: large;
+    margin-bottom: 0%;
+}
+
+.votebox button {
+    background-color: black;
+    text-align: center;
+    color: #cccccc;
+    font-size: 200%;
+    height: 83px;
+    width: 100%;
+    cursor: pointer;
+    float: left;
+    box-shadow: 8px 8px 16px #000000;
+}
+
+@keyframes hover {
+    0% {
+        background-color: #000000;
+    }
+    5% {
+        background-color: #020a0a;
+    }
+    10% {
+        background-color: #071818;
+    }
+    15% {
+        background-color: #0b2727;
+    }
+    20% {
+        background-color: #0e3131;
+    }
+    25% {
+        background-color: rgb(18, 63, 63);
+    }
+    30% {
+        background-color: #155252;
+    }
+    35% {
+        background-color: #196161;
+    }
+    40% {
+        background-color: #1c7070;
+    }
+    45% {
+        background-color: #228686;
+    }
+    50% {
+        background-color: #279999;
+    }
+    55% {
+        background-color: #228686;
+    }
+    60% {
+        background-color: #1c7070;
+    }
+    65% {
+        background-color: #196161;
+    }
+    70% {
+        background-color: #155252;
+    }
+    75% {
+        background-color: rgb(18, 63, 63);
+    }
+    80% {
+        background-color: #0e3131;
+    }
+    85% {
+        background-color: #0b2727;
+    }
+    90% {
+        background-color: #071818;
+    }
+    95% {
+        background-color: #020a0a;
+    }
+    100% {
+        background-color: #000000;
+    }
+}
+
+.votebox button:hover {
+    background-color: #15e6ca;
+    animation-name: hover;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
